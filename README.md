@@ -34,3 +34,4 @@ Tanpa D1, website tetap bisa dicoba tetapi pesanan hanya tersimpan di browser pe
 ## Kustomisasi katalog
 Edit array `products` di `app.js`. Setiap produk memakai `id`, `name`, `category`, `price`, `old`, `badge`, `tag`, `rating`, `image`, dan `desc`.
 yaps store
+yaps update
