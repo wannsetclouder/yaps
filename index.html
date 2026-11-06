@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="YAPS — temukan produk pilihan untuk kebutuhan sehari-hari.">
+  <title>YAPS — Everyday Finds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="announcement">WELCOME TO YAPS <span>•</span> TEMUKAN PRODUK FAVORITMU</div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="YAPS beranda">yaps<span>.</span></a>
+    <nav class="desktop-nav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#categories" class="nav-link">Categories</a>
+      <a href="#products" class="nav-link">Shop</a>
+      <a href="#about" class="nav-link">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="search-toggle" aria-label="Cari"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+      <button class="icon-btn bag-trigger" id="bag-open" aria-label="Keranjang"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="bag-count" id="bag-count">0</span></button>
+      <button class="menu-btn" id="menu-toggle" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR EVERYDAY DISCOVERY</p>
+        <h1>Good things.<br><em>Great finds.</em></h1>
+        <p class="hero-desc">Temukan berbagai pilihan produk yang bikin keseharianmu jadi lebih mudah dan menyenangkan.</p>
+        <a class="btn btn-dark" href="#products">Explore collection <span>↗</span></a>
+        <div class="hero-note"><span class="note-dot"></span> Curated picks, just for you</div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-label">YAPS<br><small>FIND YOUR<br>FAVORITE</small></div>
+        <div class="hero-card hero-card-back"><span>01 / DAILY</span><div class="abstract-shape shape-orange"></div></div>
+        <div class="hero-card hero-card-front"><span>NEW<br>ARRIVALS</span><div class="abstract-shape shape-lilac"></div><b>DISCOVER<br>MORE ↗</b></div>
+        <div class="hero-sticker">GOOD<br>CHOICES<br>ONLY ✳</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><b>✳</b><span>Curated products</span></div><div><b>↗</b><span>Easy shopping</span></div><div><b>♡</b><span>Made for everyday</span></div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-heading"><div><p class="eyebrow">BROWSE YOUR WAY</p><h2>Shop by category</h2></div><a href="#products" class="text-link">View all <span>↗</span></a></div>
+      <div class="category-grid" id="category-grid"></div>
+    </section>
+
+    <section class="section products-section" id="products">
+      <div class="section-heading"><div><p class="eyebrow">THE GOOD STUFF</p><h2>Find your next favorite</h2></div><div class="filter-row"><button class="filter-chip selected" data-filter="All">All items</button><button class="filter-chip" data-filter="Popular">Popular</button><button class="filter-chip" data-filter="New">New in</button></div></div>
+      <div class="search-panel" id="search-panel"><input id="search-input" type="search" placeholder="Cari nama produk..." aria-label="Cari produk"><button id="search-clear">Clear</button></div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="promo">
+      <div><p class="eyebrow">A LITTLE SOMETHING FOR YOU</p><h2>Make room for<br><em>better finds.</em></h2><p>Jelajahi pilihan menarik dari berbagai kategori dalam satu tempat.</p><a href="#products" class="btn btn-light">Shop now <span>↗</span></a></div>
+      <div class="promo-mark">y<span>.</span></div>
+    </section>
+
+    <section class="section about-section" id="about"><p class="eyebrow">HELLO, WE ARE YAPS</p><h2>One place for<br>your everyday needs.</h2><p>YAPS adalah toko online multi-kategori untuk menemukan produk pilihan dengan pengalaman belanja yang simpel.</p></section>
+  </main>
+
+  <footer><a class="brand" href="#">yaps<span>.</span></a><p>Find something good, every day.</p><small>© <span id="year"></span> YAPS. All rights reserved.</small></footer>
+
+  <nav class="mobile-nav">
+    <a href="#home" class="mobile-nav-item active"><span>⌂</span>Home</a>
+    <a href="#categories" class="mobile-nav-item"><span>▦</span>Categories</a>
+    <a href="#products" class="mobile-nav-item"><span>⌕</span>Shop</a>
+    <button class="mobile-nav-item" id="mobile-bag"><span>♧</span>Bag <i id="mobile-bag-count">0</i></button>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cart-drawer" aria-label="Keranjang belanja">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag <span id="drawer-count">(0)</span></h2></div><button class="close-btn" data-close>×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-bottom"><div class="subtotal"><span>Subtotal</span><b id="cart-subtotal">Rp0</b></div><p class="muted">Ongkir dan detail pembayaran dikonfirmasi saat checkout.</p><button class="btn btn-dark full" id="checkout-open">Continue to checkout <span>↗</span></button></div>
+  </aside>
+
+  <section class="modal" id="product-modal" aria-modal="true" role="dialog">
+    <button class="close-btn modal-close" data-close>×</button><div id="product-detail"></div>
+  </section>
+  <section class="modal checkout-modal" id="checkout-modal" aria-modal="true" role="dialog">
+    <button class="close-btn modal-close" data-close>×</button>
+    <p class="eyebrow">ALMOST YOURS</p><h2>Checkout</h2>
+    <form id="checkout-form">
+      <div class="form-grid"><label>Nama lengkap<input name="name" required placeholder="Nama penerima"></label><label>Nomor WhatsApp<input name="phone" required inputmode="tel" placeholder="08xxxxxxxxxx"></label></div>
+      <label>Email (opsional)<input name="email" type="email" placeholder="nama@email.com"></label>
+      <label>Alamat lengkap<textarea name="address" required rows="3" placeholder="Jalan, nomor rumah, kecamatan, kota, kode pos"></textarea></label>
+      <div class="form-grid"><label>Provinsi<input name="province" required placeholder="Provinsi"></label><label>Kota/Kabupaten<input name="city" required placeholder="Kota"></label></div>
+      <label>Metode pembayaran<select name="payment" required><option value="COD">Bayar di tempat (COD) — jika tersedia</option><option value="Transfer bank">Transfer bank</option></select></label>
+      <label>Catatan pesanan (opsional)<textarea name="notes" rows="2" placeholder="Catatan untuk penjual"></textarea></label>
+      <div class="checkout-total"><span>Total sementara</span><b id="checkout-total">Rp0</b></div>
+      <button class="btn btn-dark full" type="submit">Buat pesanan <span>↗</span></button>
+      <p class="tiny muted">Ini starter toko online. Pembayaran transfer perlu dikonfirmasi manual oleh admin.</p>
+    </form>
+  </section>
+  <section class="modal success-modal" id="success-modal" aria-modal="true" role="dialog"><div class="success-icon">✓</div><p class="eyebrow">ORDER RECEIVED</p><h2>Thank you!</h2><p id="success-message">Pesananmu berhasil dibuat.</p><button class="btn btn-dark full" data-close>Continue shopping</button></section>
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
