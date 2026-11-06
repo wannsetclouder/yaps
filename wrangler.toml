@@ -5,5 +5,5 @@ pages_build_output_dir = "."
 # Setelah membuat D1 database, isi database_id lalu hapus tanda komentar:
 # [[d1_databases]]
 # binding = "DB"
-# database_name = "yaps-orders"
+# database_name = "yaps-store"
 # database_id = "ISI_DATABASE_ID_DI_SINI"
