@@ -1,5 +1,5 @@
 name = "yaps-store"
-compatibility_date = "2026-11-07"
+compatibility_date = "2025-01-01"
 pages_build_output_dir = "."
 
 # Setelah membuat D1 database, isi database_id lalu hapus tanda komentar:
